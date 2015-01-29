@@ -18,7 +18,7 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });;
 
-gulp.task('inject-js', function() {
+gulp.task('inject', function() {
   return gulp.src('index.html')
   .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
   .pipe(inject(es.merge(
@@ -37,10 +37,10 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['js/*.js', 'js/**/*.js'], ['lint', 'inject-js']);
+  gulp.watch(['js/*.js', 'js/**/*.js'], ['lint', 'inject']);
 });
 
-gulp.task('default', ['lint', 'inject-js', 'server', 'watch']);
+gulp.task('default', ['lint', 'inject', 'server', 'watch']);
 
 function onError(err) {
   gutil.beep();
