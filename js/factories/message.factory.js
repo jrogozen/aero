@@ -1,7 +1,7 @@
 app.factory('Message', ['$http', '$log', '$timeout', function($http, $log, $timeout) {
   return {
     getMessages: getMessages,
-    addMessage: addMessage
+    saveMessage: saveMessage
   };
 
   function getMessages() {
@@ -18,7 +18,7 @@ app.factory('Message', ['$http', '$log', '$timeout', function($http, $log, $time
     } 
   }
 
-  function addMessage(message) {
+  function saveMessage(message) {
     /* once backend is implemented, will create POST request to server API. 
     For now, emulating with $timeout */
 

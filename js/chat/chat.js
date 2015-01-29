@@ -4,5 +4,7 @@ app.config(['$stateProvider', function($stateProvider) {
       url: '/',
       templateUrl: 'js/chat/chat.html',
       controller: 'chatCtrl'
-    });
+    })
+    ;
+
 }]);

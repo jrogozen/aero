@@ -1,0 +1,14 @@
+<div class="pane edit-pane">
+  <form ng-submit="editMessage(message)">
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" type="text" ng-model="message.author"/>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea class="form-control" ng-model="message.content"></textarea>
+    </div>
+    <button class="btn btn-success">Save
+    </button>
+  </form>
+</div>
