@@ -6,6 +6,7 @@ app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
   return {
     models: models,
     getMessages: getMessages,
+    editMessage: editMessage,
     saveMessage: saveMessage,
   };
 
@@ -26,16 +27,38 @@ app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
     }
   }
 
+  function editMessage(newMessage) {
+    return $timeout(function() {
+      /* GET message from server based on ID
+      PUT request to change message contents */
+    }, 1000)
+      .then(editMessageComplete)
+      .catch(editMessageFailed);
+
+    function editMessageComplete(response) {
+      var old = _.find(models.messages, function(message) {
+        return message.id == newMessage.id;
+      })
+      _.merge(old, newMessage);
+    }
+
+    function editMessageFailed(err) {
+      // log err
+    }
+  }
+
   function saveMessage(message) {
     return $timeout(function() {
-      // post to server
+      // POST to server
     }, 1000)
       .then(saveMessageComplete)
       .catch(saveMessageFailed);
 
     function saveMessageComplete(response) {
+      /* would normally push 'response' instead of message */
       message.timestamp = new Date();
       message.id = models.messages.length+1;
+
       return models.messages.push(message);
     }
 
@@ -43,30 +66,4 @@ app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
       // log err
     }
   }
-
-  // function getMessages() {
-  //   return $http.get('fixtures/messages.json')
-  //     .then(getMessagesComplete)
-  //     .catch(getMessagesFailed);  
-
-  //   function getMessagesComplete(response) {
-  //     return response.data;
-  //   }
-
-  //   function getMessagesFailed(error) {
-  //     // log error
-  //   } 
-  // }
-
-  // function saveMessage(message) {
-  //   /* once backend is implemented, will create POST request to server API. 
-  //   For now, emulating with $timeout */
-
-  //   return $timeout(function() {
-  //     return message;
-  //   }, 1000);
-  // }
-
-  // function findMessage(id, messages) {
-  // }
 }]);

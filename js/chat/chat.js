@@ -6,14 +6,9 @@ app.config(['$stateProvider', function($stateProvider) {
       templateUrl: 'js/chat/chat.html',
       controller: 'chatCtrl'
     })
-    .state('chat.list', {
+    .state('chat.add', {
       url: '',
-      templateUrl: 'js/chat/chat.list.html',
-    })
-    .state('edit', {
-      url: '/:id/edit',
-      controller: 'chatCtrl',
-      templateUrl: 'js/chat/chat.edit.html'
+      templateUrl: 'js/chat/chat.add.html',
     })
     ;
 
