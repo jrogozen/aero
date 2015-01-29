@@ -1,5 +1,6 @@
-<div class="pane edit-pane">
-  <form ng-submit="editMessage(message)">
+<section class="well">
+  <h1>Edit Message</h1>
+  <form ng-submit="saveMessage(message)">
     <div class="form-group">
       <label>Name</label>
       <input class="form-control" type="text" ng-model="message.author"/>
@@ -10,5 +11,5 @@
     </div>
     <button class="btn btn-success">Save
     </button>
-  </form>
-</div>
+  </form>  
+</section>

@@ -1,7 +1,9 @@
 app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope, $stateParams, Message) {
   $scope.messages = [];
-  $scope.editMode = false;
-  $scope.updatedMessage = {};
+
+  if($stateParams.id) {
+    Message.findMessage($stateParams.id, $scope.messages);
+  }
 
   function getMessages() {
     return Message.getMessages()
@@ -29,30 +31,9 @@ app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope
       });
   }
 
-  function editMessage(updatedMessage) {
-    //edit
-    $scope.editMode = false;
-  }
-
   $scope.saveMessage = function(message) {
     saveMessage(message);
   };
-
-  $scope.startEdit = function(message) {
-    // create a copy of the message so changes don't immediately reflect in DOM
-    _.each(message, function(v, k) {
-      $scope.updatedMessage[k] = v;
-    });
-    $scope.editMode = true;
-  };
-
-  $scope.cancelEdit = function() {
-    $scope.editMode = false;
-  }
-
-  $scope.finishEdit = function(message) {
-    editMessage(message);
-  }
 
   getMessages();
 }]);

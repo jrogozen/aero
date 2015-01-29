@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+  <li ng-repeat="message in messages | orderBy:'-timestamp'">
+    <section class="message">
+      <h1>{{message.author}} | {{message.id}}
+      <small>{{message.timestamp | date : "MM/dd/yy @ h:mma" }}</small>
+      </h1>
+
+      <blockquote>
+        {{message.content}}
+      </blockquote>
+
+      <a ng-if="message.editable" class="btn btn-warning btn-xs" ui-sref="edit({id: message.id})">edit message</a>
+    </section>
+  </li>
+</ul>
