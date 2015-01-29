@@ -6,7 +6,6 @@ var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var bowerFiles = require('main-bower-files');
 var es = require('event-stream');
-var angularFilesort = require('gulp-angular-filesort');
 var watch = require('gulp-watch');
 
 gulp.task('lint', function() {
@@ -19,13 +18,12 @@ gulp.task('lint', function() {
 });;
 
 gulp.task('inject', function() {
+  var mainApp = gulp.src('./js/*.js');
+  var appModules = gulp.src('./js/**/*.js');
+
   return gulp.src('index.html')
   .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
-  .pipe(inject(es.merge(
-    gulp.src(['./js/**/*.js', './js/*.js'])
-    .pipe(angularFilesort())
-  )))
-
+  .pipe(inject(gulp.src(['./js/*.js', './js/**/*.js'])))
   .pipe(gulp.dest('./'));
 });
 

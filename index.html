@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/style.css" type="text/css">
 </head>
 
-<body>
+<body ng-app="chat">
     <div class="container">
         <h1>
             tinychat
@@ -25,19 +25,35 @@
                 <p>A simple chat app will go here.</p>
             </div>
         </div>
+
+        <ui-view></ui-view>
     </div>
 </body>
 
 <!-- bower:js -->
+
 <script src="/libs/angular/angular.js"></script>
+
 <script src="/libs/lodash/lodash.js"></script>
+
 <script src="/libs/jquery/dist/jquery.js"></script>
+
 <script src="/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
 <script src="/libs/bootstrap/dist/js/bootstrap.js"></script>
+
 <!-- endinject -->
 
 <!-- inject:js -->
+
 <script src="/js/app.js"></script>
+
+<script src="/js/chat/chat.controller.js"></script>
+
+<script src="/js/chat/chat.js"></script>
+
+<script src="/js/factories/message.factory.js"></script>
+
 <!-- endinject -->
 
 </html>
