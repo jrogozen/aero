@@ -1,4 +1,4 @@
-app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
+app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout, $state) {
   var models = {
     messages: []
   };
@@ -11,6 +11,10 @@ app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
   };
 
   function getMessages() {
+    if(models.messages.length > 0) {
+      return models.messages;
+    }
+
     return $http.get('fixtures/messages.json')
       .then(getMessagesComplete)
       .catch(getMessagesFailed);
@@ -39,7 +43,8 @@ app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
       var old = _.find(models.messages, function(message) {
         return message.id == newMessage.id;
       })
-      _.merge(old, newMessage);
+      var x = _.merge(old, newMessage);
+      $state.go('chat.add');
     }
 
     function editMessageFailed(err) {

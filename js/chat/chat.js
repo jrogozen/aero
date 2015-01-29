@@ -1,7 +1,7 @@
 app.config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('chat', {
-      url: '/',
+      url: '/:id',
       abstract: true,
       templateUrl: 'js/chat/chat.html',
       controller: 'chatCtrl'
@@ -9,6 +9,10 @@ app.config(['$stateProvider', function($stateProvider) {
     .state('chat.add', {
       url: '',
       templateUrl: 'js/chat/chat.add.html',
+    })
+    .state('chat.edit', {
+      url: '/edit',
+      templateUrl: 'js/chat/chat.edit.html'
     })
     ;
 

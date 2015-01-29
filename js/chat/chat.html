@@ -13,7 +13,7 @@
 
           <p>- posted on {{message.timestamp | date : "MM/dd/yy @ h:mma" }}</p>
 
-          <a ng-if="message.editable" class="btn btn-warning btn-xs">edit message</a>
+          <a ui-sref="chat.edit({id: message.id})" class="btn btn-warning btn-xs">edit message</a>
         </section>
       </li>
     </ul>
