@@ -19,10 +19,10 @@ The above should work in the latest versions of Firefox and Chrome.
 Important: Please write a message to the backend web developer who would be working with you that includes a spec for what data and routes you want for the real version of the app to work. Be detailed about what your app needs. Include this spec with your code when you send it back.
 
 === Optional possible additional features ===
-    * A way to specify your name
+    ~~* A way to specify your name~~
     * A way to edit a message you previously sent
     * "Realtime"/checking for new messages from other users
-    * Link detection
+    ~~* Link detection~~
     * Support for any other browsers/versions (mention which ones you chose to support, and tested)
     * Improvements to look and feel
     * Anything else you think of! (Be sure to point out your additions when you send your code back.)

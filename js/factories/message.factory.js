@@ -1,43 +1,72 @@
-app.factory('Message', ['$http', '$log', '$timeout', function($http, $log, $timeout) {
+app.factory('Message', ['$http', '$timeout', function($http, $timeout) {
+  var models = {
+    messages: []
+  };
+
   return {
+    models: models,
     getMessages: getMessages,
     saveMessage: saveMessage,
-    editMessage: editMessage,
-    findMessage: findMessage
   };
 
   function getMessages() {
     return $http.get('fixtures/messages.json')
       .then(getMessagesComplete)
-      .catch(getMessagesFailed);  
+      .catch(getMessagesFailed);
 
     function getMessagesComplete(response) {
-      return response.data;
+      _.each(response.data, function(message) {
+        models.messages.push(message);
+      });
+      return models.messages;
     }
 
-    function getMessagesFailed(error) {
-      // log error
-    } 
+    function getMessagesFailed(err) {
+      // log err
+    }
   }
 
   function saveMessage(message) {
-    /* once backend is implemented, will create POST request to server API. 
-    For now, emulating with $timeout */
-
     return $timeout(function() {
-      return message;
-    }, 1000);
+      // post to server
+    }, 1000)
+      .then(saveMessageComplete)
+      .catch(saveMessageFailed);
+
+    function saveMessageComplete(response) {
+      message.timestamp = new Date();
+      message.id = models.messages.length+1;
+      return models.messages.push(message);
+    }
+
+    function saveMessageFailed(err) {
+      // log err
+    }
   }
 
-  function findMessage(id, messages) {
-  }
+  // function getMessages() {
+  //   return $http.get('fixtures/messages.json')
+  //     .then(getMessagesComplete)
+  //     .catch(getMessagesFailed);  
 
-  function editMessage(message) {
-    /* once backend is implemented, this would do a GET request to server for
-    original message based on id, then a PUT request to modify it with new values */
+  //   function getMessagesComplete(response) {
+  //     return response.data;
+  //   }
 
-    return $timeout(function() {
-      return message;
-    }, 1000);
-  }
+  //   function getMessagesFailed(error) {
+  //     // log error
+  //   } 
+  // }
+
+  // function saveMessage(message) {
+  //   /* once backend is implemented, will create POST request to server API. 
+  //   For now, emulating with $timeout */
+
+  //   return $timeout(function() {
+  //     return message;
+  //   }, 1000);
+  // }
+
+  // function findMessage(id, messages) {
+  // }
 }]);
