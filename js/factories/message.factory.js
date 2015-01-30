@@ -36,7 +36,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     return $timeout(function() {
       /* GET message from server based on ID
       PUT request to change message contents */
-    }, 1000)
+    }, 100)
       .then(editMessageComplete)
       .catch(editMessageFailed);
 
@@ -56,7 +56,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
   function saveMessage(message) {
     return $timeout(function() {
       // POST to server
-    }, 1000)
+    }, 100)
       .then(saveMessageComplete)
       .catch(saveMessageFailed);
 
@@ -76,7 +76,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
   function getUserMessages(userName) {
     return $timeout(function() {
       // GET to server to get a user's messages
-    }, 1000)
+    }, 100)
       .then(getUserMessagesComplete)
       .catch(getUserMessagesFailed);
 
@@ -86,7 +86,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
       }
 
       return _.filter(models.messages, function(message) {
-        return message.author == userName;
+        return message.author.toLowerCase() == userName.toLowerCase();
       });
     }
 

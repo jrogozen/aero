@@ -1,24 +1,24 @@
 body {
-  background-color: snow;
+  background-color: white;
   color: black;
   font-family: 'Pontano Sans', sans-serif;
 }
 
 a {
   font-family: 'Oswald', sans-serif;
-  color: $primary;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
+  color: rgb(219,72,68);
   text-decoration: none;
 
   &:hover {
-    color: $primary-reverse;
+    color: rgb(219,72,68);
     text-decoration: none;
   }
 }
 
 h1, h2, h3, h4, h5 {
+  margin-top: 0;
   font-family: 'Oswald', sans-serif;
+  color: rgb(40,48,61);
 }
 
 blockquote {
@@ -27,5 +27,6 @@ blockquote {
 
 button, .btn {
   font-family: 'Oswald', sans-serif;
+  transition: background 0.5s, color 0.5s;
 }
 

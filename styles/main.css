@@ -1,41 +1,67 @@
 body {
-  background-color: snow;
+  background-color: white;
   color: black;
   font-family: 'Pontano Sans', sans-serif; }
 
 a {
   font-family: 'Oswald', sans-serif;
-  color: #3B8686;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
+  color: #db4844;
   text-decoration: none; }
   a:hover {
-    color: #79BD9A;
+    color: #db4844;
     text-decoration: none; }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Oswald', sans-serif; }
+  margin-top: 0;
+  font-family: 'Oswald', sans-serif;
+  color: #28303d; }
 
 blockquote {
   font-family: 'Pontano Sans', sans-serif; }
 
 button, .btn {
-  font-family: 'Oswald', sans-serif; }
+  font-family: 'Oswald', sans-serif;
+  transition: background 0.5s, color 0.5s; }
 
 .content {
   margin-top: 35px; }
 
+.color-panel {
+  background: #f6f5f2;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 40px; }
+  .color-panel h1 {
+    margin-top: 20px; }
+
 nav.global a {
   font-size: 18px;
-  color: #79BD9A; }
+  color: #28443d;
+  transition: color 0.2s ease-in-out; }
   nav.global a:hover {
-    color: #3B8686; }
+    color: #db4844; }
 
 h1.author, h1.name {
-  font-family: 'Lobster Two', cursive; }
+  /*font-family: 'Lobster Two', cursive;*/ }
 
 .user {
   float: left;
   margin-bottom: 15px; }
   .user img {
     margin-right: 10px; }
+
+.btn-warning {
+  background: #db4844;
+  border-color: #db4844; }
+  .btn-warning:hover {
+    background: white;
+    border-color: #db4844;
+    color: #db4844; }
+
+.btn-success {
+  background: #93cc8a;
+  border-color: #93cc8a; }
+  .btn-success:hover {
+    background: white;
+    border-color: #93cc8a;
+    color: #93cc8a; }

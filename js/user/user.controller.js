@@ -17,6 +17,10 @@ app.controller('userCtrl', ['$scope', '$stateParams', 'Message', 'User', functio
       .then(function(data) {
         Message.getUserMessages(data.name)
         .then(function(data) {
+          if (data.length < 1) {
+            // no posts found
+          }
+          
           $scope.messages = data;
         });
       });

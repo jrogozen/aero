@@ -2,13 +2,25 @@
   margin-top: 35px;
 }
 
+.color-panel {
+  background: rgb(246,245,242);
+  border-radius: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+
+  h1 {
+    margin-top: 20px;
+  }
+}
+
 nav.global {
   a {
     font-size: 18px;
-    color: $primary-reverse;
+    color: rgb(40,68,61);
+    transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: $primary;
+      color: rgb(219,72,68);
     }
   }
 }
