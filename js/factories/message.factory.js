@@ -42,7 +42,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     function editMessageComplete(response) {
       var old = _.find(models.messages, function(message) {
         return message.id == newMessage.id;
-      })
+      });
       var x = _.merge(old, newMessage);
       $state.go('chat.add');
     }

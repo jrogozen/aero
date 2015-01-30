@@ -20,7 +20,7 @@ Important: Please write a message to the backend web developer who would be work
 
 === Optional possible additional features ===
     ~~* A way to specify your name~~
-    * A way to edit a message you previously sent
+    ~~* A way to edit a message you previously sent~~
     * "Realtime"/checking for new messages from other users
     ~~* Link detection~~
     * Support for any other browsers/versions (mention which ones you chose to support, and tested)

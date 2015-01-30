@@ -3,10 +3,10 @@ app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope
 
   function getMessages() {
     if(Message.models.messages.length < 1) {
-     return Message.getMessages()
-      .then(function(data) {
-        $scope.messages = Message.models.messages;
-      }); 
+      return Message.getMessages()
+        .then(function(data) {
+          $scope.messages = Message.models.messages;
+        }); 
     }
     $scope.messages = Message.models.messages;
   }
@@ -29,7 +29,7 @@ app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope
 
   $scope.editMessage = function(newMessage) {
     editMessage(newMessage);
-  }
+  };
 
   getMessages();
 }]);

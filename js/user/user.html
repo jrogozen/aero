@@ -1,0 +1,15 @@
+<div class="row">
+  <ui-view></ui-view>
+{{users}}
+  <div class="col-sm-12 col-md-6 col-md-offset-1">
+    <ul class="list-unstyled">
+      <li ng-repeat="user in users">
+        <section class="user">
+          <h1>{{user}}</h1>
+
+          <!-- <a ui-sref="chat.edit({id: message.id})" class="btn btn-warning btn-xs">edit message</a> -->
+        </section>
+      </li>
+    </ul>
+  </div>
+</div>
