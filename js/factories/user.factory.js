@@ -5,7 +5,8 @@ app.factory('User', ['$http', '$timeout', function($http, $timeout) {
 
   return {
     models: models,
-    getUsers: getUsers
+    getUsers: getUsers,
+    getName: getName
   };
 
   function getUsers() {
@@ -15,20 +16,34 @@ app.factory('User', ['$http', '$timeout', function($http, $timeout) {
 
     /* once there is a backend/authentication system, this would be replaced with a call to the server
     instead of grabbing users from stored messages */
-    return $http.get('fixtures/messages.json')
+    return $http.get('fixtures/users.json')
       .then(getUsersComplete)
       .catch(getUsersFailed);
 
       function getUsersComplete(response) {
-        var authors = [];
-        _.each(response.data, function(message) {
-          authors.push(message.author);
-        });
-        models.users = _.uniq(authors);
+        models.users = response.data;
       }
 
       function getUsersFailed() {
         // log err;
       }
+  }
+
+  function getName(userId) {
+    return $timeout(function(){
+      /* GET request to server for users matching that ID */
+    }, 100)
+      .then(getNameComplete)
+      .catch(getNameFailed);
+
+    function getNameComplete(response) {
+      return _.find(models.users, function(user) {
+        return user.id == userId;
+      });
+    }
+
+    function getNameFailed(err) {
+      // log err
+    }
   }
 }]);

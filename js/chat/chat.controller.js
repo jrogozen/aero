@@ -1,5 +1,6 @@
 app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope, $stateParams, Message) {
   $scope.messages = [];
+  $scope.message = {};
 
   function getMessages() {
     if(Message.models.messages.length < 1) {
@@ -20,7 +21,10 @@ app.controller('chatCtrl', ['$scope', '$stateParams', 'Message', function($scope
 
   function editMessage(newMessage) {
     newMessage.id = parseInt($stateParams.id);
-    Message.editMessage(newMessage);
+    Message.editMessage(newMessage)
+      .then(function(data) {
+        $scope.message = {};
+      });
   }
 
   $scope.saveMessage = function(message) {

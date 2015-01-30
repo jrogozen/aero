@@ -7,6 +7,7 @@ var inject = require('gulp-inject');
 var bowerFiles = require('main-bower-files');
 var es = require('event-stream');
 var watch = require('gulp-watch');
+var sass = require('gulp-sass');
 
 gulp.task('lint', function() {
   return gulp.src(['js/*.js', 'js/**/*.js'])
@@ -16,6 +17,12 @@ gulp.task('lint', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });;
+
+gulp.task('sass', function() {
+  return gulp.src('styles/main.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('styles'));
+})
 
 gulp.task('inject', function() {
   var mainApp = gulp.src('./js/*.js');
@@ -35,10 +42,10 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['js/*.js', 'js/**/*.js'], ['lint', 'inject']);
+  gulp.watch(['js/*.js', 'js/**/*.js', 'styles/*.scss'], ['lint', 'inject', 'sass']);
 });
 
-gulp.task('default', ['lint', 'inject', 'server', 'watch']);
+gulp.task('default', ['lint', 'inject', 'server', 'sass', 'watch']);
 
 function onError(err) {
   gutil.beep();

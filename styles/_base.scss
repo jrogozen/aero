@@ -1,0 +1,31 @@
+body {
+  background-color: snow;
+  color: black;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+a {
+  font-family: 'Oswald', sans-serif;
+  color: $primary;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-reverse;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Oswald', sans-serif;
+}
+
+blockquote {
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+button, .btn {
+  font-family: 'Oswald', sans-serif;
+}
+

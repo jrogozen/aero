@@ -1,0 +1,41 @@
+body {
+  background-color: snow;
+  color: black;
+  font-family: 'Pontano Sans', sans-serif; }
+
+a {
+  font-family: 'Oswald', sans-serif;
+  color: #3B8686;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  text-decoration: none; }
+  a:hover {
+    color: #79BD9A;
+    text-decoration: none; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Oswald', sans-serif; }
+
+blockquote {
+  font-family: 'Pontano Sans', sans-serif; }
+
+button, .btn {
+  font-family: 'Oswald', sans-serif; }
+
+.content {
+  margin-top: 35px; }
+
+nav.global a {
+  font-size: 18px;
+  color: #79BD9A; }
+  nav.global a:hover {
+    color: #3B8686; }
+
+h1.author, h1.name {
+  font-family: 'Lobster Two', cursive; }
+
+.user {
+  float: left;
+  margin-bottom: 15px; }
+  .user img {
+    margin-right: 10px; }

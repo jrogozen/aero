@@ -1,0 +1,14 @@
+.content {
+  margin-top: 35px;
+}
+
+nav.global {
+  a {
+    font-size: 18px;
+    color: $primary-reverse;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

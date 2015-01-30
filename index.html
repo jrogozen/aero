@@ -2,6 +2,7 @@
 <head>
     <title>tinychat</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two|Oswald:400,300|Pontano+Sans' rel='stylesheet' type='text/css'>
     
     <!-- bower:css -->
     
@@ -9,18 +10,23 @@
     
     <!-- endinject -->
 
-    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+    <link rel="stylesheet" href="/styles/main.css" type="text/css">
 </head>
 
 <body ng-app="chat">
     <div class="container">
         <h1>
-            <a href="/">tinychat</a>
-            <span class="glyphicon glyphicon-bullhorn"></span>
-            <span class="glyphicon glyphicon-globe"></span>
-            <span class="glyphicon glyphicon-heart"></span>
+            <a ui-sref="chat.add">tinychat</a>
         </h1>
-        <ui-view></ui-view>
+
+        <nav class="global">
+          <a ui-sref="users">users</a>
+        </nav>
+
+        <div class="content">
+          <ui-view></ui-view>
+        </div>
+        
     </div>
 </body>
 
@@ -44,13 +50,13 @@
 
 <script src="/js/app.js"></script>
 
-<script src="/js/chat/chat.controller.js"></script>
-
-<script src="/js/chat/chat.js"></script>
-
 <script src="/js/factories/message.factory.js"></script>
 
 <script src="/js/factories/user.factory.js"></script>
+
+<script src="/js/chat/chat.controller.js"></script>
+
+<script src="/js/chat/chat.js"></script>
 
 <script src="/js/user/user.controller.js"></script>
 

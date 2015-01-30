@@ -1,15 +1,15 @@
 <div class="row">
-  <ui-view></ui-view>
-{{users}}
-  <div class="col-sm-12 col-md-6 col-md-offset-1">
+  <div class="col-sm-12 col-md-4">
     <ul class="list-unstyled">
-      <li ng-repeat="user in users">
+    <div class="row">
+      <li class="col-sm-12" ng-repeat="user in users">
         <section class="user">
-          <h1>{{user}}</h1>
-
-          <!-- <a ui-sref="chat.edit({id: message.id})" class="btn btn-warning btn-xs">edit message</a> -->
+          <img class="pull-left" ng-src="{{user.gravatar_url}}"/>
+          <h1 class="user pull-left"><a ui-sref="users.messages({id: user.id})">{{user.name}}</a></h1>
         </section>
       </li>
+    </div>
     </ul>
   </div>
+  <ui-view></ui-view>
 </div>

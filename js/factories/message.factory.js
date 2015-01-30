@@ -8,6 +8,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     getMessages: getMessages,
     editMessage: editMessage,
     saveMessage: saveMessage,
+    getUserMessages: getUserMessages
   };
 
   function getMessages() {
@@ -68,6 +69,28 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     }
 
     function saveMessageFailed(err) {
+      // log err
+    }
+  }
+
+  function getUserMessages(userName) {
+    return $timeout(function() {
+      // GET to server to get a user's messages
+    }, 1000)
+      .then(getUserMessagesComplete)
+      .catch(getUserMessagesFailed);
+
+    function getUserMessagesComplete(response) {
+      if(models.messages.length < 1) {
+        getMessages();
+      }
+
+      return _.filter(models.messages, function(message) {
+        return message.author == userName;
+      });
+    }
+
+    function getUserMessagesFailed() {
       // log err
     }
   }
