@@ -1,4 +1,4 @@
-app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout, $state) {
+app.factory('Message', ['$http', '$timeout', '$state', '$log', function($http, $timeout, $state, $log) {
   var models = {
     messages: []
   };
@@ -28,7 +28,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     }
 
     function getMessagesFailed(err) {
-      // log err
+      $log.warn(err);
     }
   }
 
@@ -49,7 +49,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     }
 
     function editMessageFailed(err) {
-      // log err
+      $log.warn(err);
     }
   }
 
@@ -69,7 +69,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     }
 
     function saveMessageFailed(err) {
-      // log err
+      $log.warn(err);
     }
   }
 
@@ -91,7 +91,7 @@ app.factory('Message', ['$http', '$timeout', '$state', function($http, $timeout,
     }
 
     function getUserMessagesFailed() {
-      // log err
+      $log.warn(err);
     }
   }
 }]);

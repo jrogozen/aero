@@ -11,7 +11,7 @@
           <blockquote ng-bind-html="message.content | linky:'_blank' ">
           </blockquote>
 
-          <p>- posted on {{message.timestamp | date : "MM/dd/yy @ h:mma" }}</p>
+          <p class="timestamp">- posted on {{message.timestamp | date : "MM/dd/yy @ h:mma" }}</p>
 
           <a ui-sref="chat.edit({id: message.id})" class="btn btn-warning btn-xs">edit message</a>
         </section>

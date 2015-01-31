@@ -6,19 +6,30 @@ body {
 
 a {
   font-family: 'Oswald', sans-serif;
-  color: rgb(219,72,68);
+  color: $red;
   text-decoration: none;
 
-  &:hover {
-    color: rgb(219,72,68);
+  &:link {
+    color: $red;
     text-decoration: none;
   }
+
+  &:visited {
+    color: $red;
+  }
+
+  &:hover {
+    color: $red;
+    text-decoration: none;
+  }
+
+ 
 }
 
 h1, h2, h3, h4, h5 {
   margin-top: 0;
   font-family: 'Oswald', sans-serif;
-  color: rgb(40,48,61);
+  color: $grey;
 }
 
 blockquote {

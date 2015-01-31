@@ -7,6 +7,11 @@ a {
   font-family: 'Oswald', sans-serif;
   color: #db4844;
   text-decoration: none; }
+  a:link {
+    color: #db4844;
+    text-decoration: none; }
+  a:visited {
+    color: #db4844; }
   a:hover {
     color: #db4844;
     text-decoration: none; }
@@ -36,13 +41,10 @@ button, .btn {
 
 nav.global a {
   font-size: 18px;
-  color: #28443d;
+  color: #28303d;
   transition: color 0.2s ease-in-out; }
   nav.global a:hover {
     color: #db4844; }
-
-h1.author, h1.name {
-  /*font-family: 'Lobster Two', cursive;*/ }
 
 .user {
   float: left;
@@ -52,7 +54,13 @@ h1.author, h1.name {
 
 .btn-warning {
   background: #db4844;
-  border-color: #db4844; }
+  border-color: #db4844;
+  color: white; }
+  .btn-warning:link {
+    color: white; }
+  .btn-warning:visited {
+    color: white;
+    background: #db4844; }
   .btn-warning:hover {
     background: white;
     border-color: #db4844;

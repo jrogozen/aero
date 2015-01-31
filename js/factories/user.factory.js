@@ -1,4 +1,4 @@
-app.factory('User', ['$http', '$timeout', function($http, $timeout) {
+app.factory('User', ['$http', '$timeout', '$log', function($http, $timeout, $log) {
   var models = {
     users: []
   };
@@ -25,7 +25,7 @@ app.factory('User', ['$http', '$timeout', function($http, $timeout) {
       }
 
       function getUsersFailed() {
-        // log err;
+        $log.warn(err);
       }
   }
 
@@ -43,7 +43,7 @@ app.factory('User', ['$http', '$timeout', function($http, $timeout) {
     }
 
     function getNameFailed(err) {
-      // log err
+      $log.warn(err);
     }
   }
 }]);

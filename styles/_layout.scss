@@ -3,7 +3,7 @@
 }
 
 .color-panel {
-  background: rgb(246,245,242);
+  background: $off-white;
   border-radius: 10px;
   padding-bottom: 20px;
   margin-bottom: 40px;
@@ -16,11 +16,10 @@
 nav.global {
   a {
     font-size: 18px;
-    color: rgb(40,68,61);
+    color: $grey;
     transition: color 0.2s ease-in-out;
-
     &:hover {
-      color: rgb(219,72,68);
+      color: $red;
     }
   }
 }
