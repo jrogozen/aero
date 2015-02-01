@@ -7,8 +7,10 @@ exports.config = {
 
   chromeOnly: true,
 
+  chromeDriver: './node_modules/protractor/selenium/chromedriver',
+
   specs: [
-    'e2e/**/*.spec.js'
+    'test/e2e/**/*.spec.js'
   ],
 
   capabilities: {
@@ -18,6 +20,7 @@ exports.config = {
   framework: 'jasmine',
 
   jasmineNodeOpts: {
+    showColors: true,
     defaultTimeoutInterval: 30000
   }
 };

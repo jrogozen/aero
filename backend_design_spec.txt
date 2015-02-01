@@ -1,1 +1,30 @@
 (here is where your spec/explanation to the tinychat backend developer goes)
+
+Scope of MVP Project
+  - People can create and edit chat messages
+  - No user authentication
+  - All messages are editable
+  - Messages cannot be deleted
+  - Every message should be attached to a User. If there is no author specified, attach the message to the user "anonymouse" by default.
+
+API Routes
+- All routes should return JSON / appropriate header status (200 + 202 for successes, 404 for not found, 500 for server errors)
+- For post/put requests, data will be sent in request body.
+- Where applicable, ids will be sent in request params.
+
+GET /api/messages
+  - Return array of all messages
+POST /api/messages
+  - Create/save new message to server. Return the saved message. Check to see if author has made a message before. If they haven't save author as a new user. Add this message to that user's list of messages. 
+GET /api/messages/:id
+  - Return message object that matches ID sent in route params
+PUT /api/messages/:id
+  - Update/save message object that matches ID sent in route params + return the updated object
+
+GET /api/users
+  - Return array of all users who have sent messages
+GET /api/users/:id
+  - Return specific information about user matching ID found in request.params. What is returned will depend on how we handle user authentication and the scope of the project. For MVP let's just return user's name.
+GET /api/users/:id/messages
+  - Return array of all a specific user's messages.
+

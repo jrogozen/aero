@@ -52,6 +52,9 @@ nav.global a {
   .user img {
     margin-right: 10px; }
 
+.chat-add, .chat-edit {
+  margin-bottom: 20px; }
+
 .btn-warning {
   background: #db4844;
   border-color: #db4844;
