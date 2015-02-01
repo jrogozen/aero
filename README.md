@@ -28,7 +28,8 @@ Within the project, I've implemented displaying chat messages w/ Author names, a
 
 The two main routes of the app are:
    
-   / && /#/users
+   /
+   /#/users
 
 Once connected to a back end, I would enable Angular's HTML5mode to get rid of the hashbang when possible. 
 
