@@ -26,11 +26,6 @@ I've included some barebones end to end tests and once the server is started, yo
 
 Within the project, I've implemented displaying chat messages w/ Author names, adding and editing messages, timestamps, link recognition, bootstrap styling, a user list, and filtering of messages by user.
 
-The two main routes of the app are:
-   
-   /
-   /#/users
-
 Once connected to a back end, I would enable Angular's HTML5mode to get rid of the hashbang when possible. 
 
 Angular Modules:
