@@ -28,15 +28,22 @@ Within the project, I've implemented displaying chat messages w/ Author names, a
 
 Once connected to a back end, I would enable Angular's HTML5mode to get rid of the hashbang when possible. 
 
-Angular Modules:
+**Angular Modules**
  - ui.router (routes/states)
  - ngSanitize (necessary for directive to linkify links)
 
-Possible Future enhancements:
+**Possible Future enhancements**
  - User login/authentication
  - User settings (gravatar, stats, etc..)
  - User permissions (only edit your own messages)
  - More robust test suite && controller tests (mocha)
+
+**Notes**
+In place of making actual calls to an api/backend, I've used angular's $timeout to replicate a server call and preserve a deferral/promise implementation. The methods I use within my factories to get/save data are a bit convoluted, since I store the data within variables inside factories to retain access to them throughout my controllers and scopes. 
+
+In production, I might choose to update controller scopes based on actions rather than trying to juggle variables within factories.
+
+Based on the scope of the project, I would probably also add some form validation to ensure that only allowed messages / authors are posting to the chat.
 
 === What files live where ===
 
