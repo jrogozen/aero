@@ -4,7 +4,7 @@ Hi!
 
 I've implemented the frontend of tinychat in Angular and included the backend specs in backend_design_spec.txt. 
 
-You can find the repo here on github here 
+You can find the repo on github here 
     https://github.com/jrogozen/aero
 
 Before starting the server, please make sure you have Npm and Bower installed. In order to run the tests, you may have to also globally install Protractor and update webdriver-manager using
